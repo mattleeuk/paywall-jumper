@@ -141,7 +141,7 @@ const useGoogleBotSites = [
   'kansascity.com'
 ];
 
-function setDefaultOptions () {
+function setDefaultOptions() {
   extensionApi.storage.sync.set({
     sites: defaultSites
   }, function () {
@@ -218,7 +218,7 @@ extensionApi.tabs.onActivated.addListener(function (activeInfo) {
 });
 
 let cachedBadgeText = '';
-function updateBadge (activeTab) {
+function updateBadge(activeTab) {
   if (!activeTab) { return; }
   const badgeText = getBadgeText(activeTab.url);
   if (cachedBadgeText === badgeText) { return; }
@@ -227,7 +227,7 @@ function updateBadge (activeTab) {
   extensionApi.browserAction.setBadgeText({ text: badgeText });
 }
 
-function getBadgeText (currentUrl) {
+function getBadgeText(currentUrl) {
   return currentUrl && isSiteEnabled({ url: currentUrl }) ? 'ON' : '';
 }
 
@@ -244,18 +244,18 @@ extensionApi.webRequest.onBeforeRequest.addListener(function (details) {
   }
   return { cancel: true };
 },
-{
-  urls: [
-    '*://*.newstatesman.com/*',
-    '*://*.outbrain.com/*',
-    '*://*.piano.io/*',
-    '*://*.poool.fr/*',
-    '*://*.economist.com/*',
-    '*://*.tinypass.com/*'
-  ],
-  types: ['script']
-},
-['blocking']
+  {
+    urls: [
+      '*://*.newstatesman.com/*',
+      '*://*.outbrain.com/*',
+      '*://*.piano.io/*',
+      '*://*.poool.fr/*',
+      '*://*.economist.com/*',
+      '*://*.tinypass.com/*'
+    ],
+    types: ['script']
+  },
+  ['blocking']
 );
 
 const extraInfoSpec = ['blocking', 'requestHeaders'];
@@ -409,7 +409,7 @@ extensionApi.webRequest.onCompleted.addListener(function (details) {
 });
 
 // Google Analytics to anonymously track DAU (Chrome only)
-function initGA () {
+function initGA() {
   (function (i, s, o, g, r, a, m) {
     i.GoogleAnalyticsObject = r;
     i[r] = i[r] || function () {
@@ -426,7 +426,7 @@ function initGA () {
   ga('send', 'pageview');
 }
 
-function isSiteEnabled (details) {
+function isSiteEnabled(details) {
   const isEnabled = enabledSites.some(function (enabledSite) {
     const useSite = isSameDomain(details.url, enabledSite);
     if (enabledSite in restrictions) {
@@ -437,7 +437,7 @@ function isSiteEnabled (details) {
   return isEnabled;
 }
 
-function isSameDomain (url, domain) {
+function isSameDomain(url, domain) {
   if (url.indexOf('http') !== 0) {
     // Not start with http or https, add a prefix
     url = 'http://' + url;
