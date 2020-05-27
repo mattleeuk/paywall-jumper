@@ -1,6 +1,4 @@
-<h1 align="center">Paywall Jumper</h1>
-
-*Paywall Jumper is a web browser extension to help Paywall Jumper for selected sites.*
+<h1>Paywall Jumper</h1>
 
 ### Installation Instructions
 **Google Chrome**
