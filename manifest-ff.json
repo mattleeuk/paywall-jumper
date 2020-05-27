@@ -30,7 +30,7 @@
   "applications": {
     "gecko": {
       "id": "bypasspaywalls@bypasspaywalls.weebly.com",
-      "update_url": "https://raw.githubusercontent.com/mattleeuk/bypass-paywalls-chrome/master/src/updates/updates.json"
+      "update_url": "https://raw.githubusercontent.com/mattleeuk/paywall-jumper/master/src/updates/updates.json"
     }
   },
   "browser_action": {
@@ -47,12 +47,12 @@
     }
   },
   "description": "Bypass News Sites' Paywalls",
-  "homepage_url": "https://github.com/mattleeuk/bypass-paywalls-chrome/blob/master/README.md",
+  "homepage_url": "https://github.com/mattleeuk/paywall-jumper/blob/master/README.md",
   "icons": {
     "128": "src/icon/bypass.png"
   },
   "manifest_version": 2,
-  "name": "Bypass Paywalls",
+  "name": "Paywall Jumper",
   "short_name": "Bypass Paywall",
   "options_ui": {
     "page": "src/html/options.html"
@@ -69,7 +69,6 @@
     "*://*.businessinsider.com/*",
     "*://*.economist.com/*",
     "*://*.foreignpolicy.com/*",
-    "*://*.fortune.com/*",
     "*://*.ft.com/*",
     "*://*.glassdoor.com/*",
     "*://*.harpers.org/*",
@@ -81,7 +80,6 @@
     "*://*.spectator.co.uk/*",
     "*://*.telegraph.co.uk/*",
     "*://*.the-tls.co.uk/*",
-    "*://*.theathletic.co.uk/*",
     "*://*.theatlantic.com/*",
     "*://*.thetimes.co.uk/*",
     "*://*.vanityfair.com/*",
